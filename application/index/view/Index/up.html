@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改</title>
+</head>
+<body>
+<center>
+    <form action="{:url('index/doup')}" method="post">
+        <input type="text" name="id" value="{$data.id}">
+        姓名：<input type="text" name="name" value="{$data.name}"><br>
+        密码：<input type="text" name="pwd" value="{$data.pwd}"><br>
+        <input type="submit" value="修改">
+    </form>
+</center>
+</body>
+</html>

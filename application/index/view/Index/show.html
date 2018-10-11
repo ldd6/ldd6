@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>展示</title>
+</head>
+<body>
+<center>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>名字</td>
+            <td>密码</td>
+            <td>操作</td>
+        </tr>
+        {volist name="$data" id="vo"}
+        <tr>
+            <td>{$vo['id']}</td>
+            <td>{$vo['name']}</td>
+            <td>{$vo['pwd']}</td>
+            <td>
+                <a href="{:url('index/del')}?id={$vo.id}">删除</a> |
+                <a href="{:url('index/up')}?id={$vo.id}">修改</a>
+            </td>
+        </tr>
+        {/volist}
+    </table>
+</center>
+</body>
+</html>
