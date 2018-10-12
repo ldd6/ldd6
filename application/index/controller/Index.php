@@ -4,6 +4,7 @@ namespace app\index\controller;
 use think\Controller;
 use think\Request;
 use app\index\model\User;
+use think\Db;
 class Index extends Controller
 {
     public function index()
@@ -53,4 +54,21 @@ class Index extends Controller
             $this->error("修改失败",'index/show');
         }
     }
+    public function shi(){
+        // 启动事务
+        Db::startTrans();
+        try {
+            Db::table('user')->delete('4');
+            Db::table('user')->delete('5');
+            // 提交事务
+            echo 1;
+            Db::commit();
+        } catch (\Exception $e) {
+            // 回滚事务
+            echo 2;
+            Db::rollback();
+        }
+    }
+
+
 }
